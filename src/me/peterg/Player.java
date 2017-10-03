@@ -40,7 +40,7 @@ public class Player {
     }
 
     public String generateScore() {
-        return getName() + " " + getCurrentWins() + " " + getCurrentLosses() + " " + generateRatio() + '%';
+        return getName() + " " + getCurrentWins() + ":" + getCurrentLosses() + " " + generateRatio() + '%';
     }
 
     public int generateRatio() {
