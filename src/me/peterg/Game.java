@@ -64,6 +64,8 @@ public class Game {
             case 2:
                 System.out.println("PLAYER 1 WINS!");
                 System.out.println("(" + parseMove(playerMoves[0]).toLowerCase() + " beats " + parseMove(playerMoves[1]).toLowerCase() + ")");
+                players[0].recordScore(true);
+                players[1].recordScore(false);
                 break;
             case 0:
                 System.out.println("DRAW! You both chose " + parseMove(playerMoves[0]).toLowerCase() + "!");
@@ -75,6 +77,8 @@ public class Game {
             case -2:
                 System.out.println("PLAYER 2 WINS!");
                 System.out.println("(" + parseMove(playerMoves[1]).toLowerCase() + " beats " + parseMove(playerMoves[0]).toLowerCase() + ")");
+                players[0].recordScore(false);
+                players[1].recordScore(true);
                 break;
         }
 

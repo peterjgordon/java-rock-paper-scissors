@@ -39,6 +39,14 @@ public class Player {
         this.currentLosses = currentLosses;
     }
 
+    public void recordScore(boolean win) {
+        if(win) {
+            currentWins++;
+        } else {
+            currentLosses++;
+        }
+    }
+
     public String generateScore() {
         return getName() + " " + getCurrentWins() + ":" + getCurrentLosses() + " " + generateRatio() + '%';
     }
