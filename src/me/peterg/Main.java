@@ -15,5 +15,9 @@ public class Main {
 
     }
 
-    //for (Player player : players.values())
+    private static void showScores() {
+        for (Player player : players.values()) {
+            System.out.println(player.generateScore());
+        }
+    }
 }

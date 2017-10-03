@@ -38,4 +38,14 @@ public class Player {
     public void setCurrentLosses(int currentLosses) {
         this.currentLosses = currentLosses;
     }
+
+    public String generateScore() {
+        return getName() + " " + getCurrentWins() + " " + getCurrentLosses() + " " + generateRatio() + '%';
+    }
+
+    public int generateRatio() {
+        return getCurrentWins() / (getCurrentWins() + getCurrentLosses());
+    }
+
+
 }
