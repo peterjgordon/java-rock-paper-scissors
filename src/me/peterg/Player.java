@@ -39,15 +39,23 @@ public class Player {
         this.currentLosses = currentLosses;
     }
 
-    public String generateScore() {
-        return getName() + " " + getCurrentWins() + " " + getCurrentLosses() + " " + generateRatio() + '%';
+    public void recordScore(boolean win) {
+        if(win) {
+            currentWins++;
+        } else {
+            currentLosses++;
+        }
     }
 
-    public int generateRatio() {
+    public String generateScore() {
+        return getName() + " " + getCurrentWins() + ":" + getCurrentLosses() + " " + Math.round(generateRatio()) + '%';
+    }
+
+    public float generateRatio() {
         if (getCurrentWins() == 0 && getCurrentLosses() == 0) {
             return 0;
         } else {
-            return getCurrentWins() / (getCurrentWins() + getCurrentLosses());
+            return getCurrentWins() / (getCurrentWins() + (float)getCurrentLosses()) * 100;
         }
     }
 
