@@ -44,7 +44,11 @@ public class Player {
     }
 
     public int generateRatio() {
-        return getCurrentWins() / (getCurrentWins() + getCurrentLosses());
+        if (getCurrentWins() == 0 && getCurrentLosses() == 0) {
+            return 0;
+        } else {
+            return getCurrentWins() / (getCurrentWins() + getCurrentLosses());
+        }
     }
 
 
