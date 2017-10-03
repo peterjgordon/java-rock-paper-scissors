@@ -41,6 +41,8 @@ public class Game {
     }
 
     public void play() {
+        Main.clearConsole();
+
         playerMoves = new int[2];
 
         System.out.println("The game begins... [" + players[0].getName() + " vs " + players[1].getName() + "]\n");
@@ -48,8 +50,11 @@ public class Game {
         for (int i = 0; i < 2; i++) {
             System.out.println("It's " + players[i].getName() + "'s turn to make a move!");
             System.out.println("[" + players[(i + 1) % 2].getName() + ", don't look at the screen]\n");
-            System.out.print("Enter your move: ");
-            playerMoves[i] = parseChoice(scanner.nextLine());
+            while(playerMoves[i]==0) {
+                System.out.print("Enter your move: ");
+                playerMoves[i] = parseChoice(scanner.nextLine());
+                if(playerMoves[i]==0) System.out.println("Your move can be 'rock', 'paper' or 'scissors'.\n");
+            }
 
             Main.clearConsole();
         }
