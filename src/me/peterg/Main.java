@@ -21,6 +21,7 @@ public class Main {
             System.out.println("=============================");
 
             System.out.print("Enter a number: ");
+            while(!scanner.hasNextInt()) if(scanner.hasNext()) scanner.nextLine();
             int input = scanner.nextInt();
             scanner.nextLine(); // ignore the newline after the previous int
 
@@ -83,6 +84,8 @@ public class Main {
     }
 
     private static void showScores() {
+        players.entrySet();
+
         for (Player player : players.values()) {
             System.out.println(player.generateScore());
         }
