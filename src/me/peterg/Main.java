@@ -84,8 +84,6 @@ public class Main {
     }
 
     private static void showScores() {
-        players.entrySet();
-
         for (Player player : players.values()) {
             System.out.println(player.generateScore());
         }
