@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    static HashMap<String, Player> players = new HashMap<>();
+    private static HashMap<String, Player> players = new HashMap<>();
     private static Scanner scanner;
 
     public static void main(String[] args) {
@@ -76,6 +76,10 @@ public class Main {
             if (playerTwoName != null) System.out.println("No player with that name exists!");
             System.out.print("Enter Player 2's name: ");
             playerTwoName = scanner.nextLine();
+        }
+        if(playerOneName.equalsIgnoreCase(playerTwoName)) {
+            System.out.println("You can't play against yourself!");
+            return;
         }
         Player playerOne = players.get(playerOneName);
         Player playerTwo = players.get(playerTwoName);
